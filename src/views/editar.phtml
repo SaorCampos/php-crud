@@ -7,26 +7,27 @@
 </head>
 <body>
     <form method="POST" action="#">
+        <input type="hidden" name="id" value="<?php echo $aluno['id'];?>">
         <div class="form-group row">
             <label for="nome" class="col-sm-2 col-form-label">Nome</label>
             <div class="col-sm-10">
-                <input type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){3,}" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?php echo $linhas['nome']?>">
+                <input type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){3,}" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?php echo $aluno['nome'];?>">
             </div>
         </div>
         <div class="form-group row">
             <label for="matricula" class="col-sm-2 col-form-label">Matricula</label>
             <div class="col-sm-10">
-                <input name="matricula" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){2,}" class="form-control" id="matricula" placeholder="matricula" value="<?php echo $linhas['matricula']?>">
+                <input name="matricula" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){2,}" class="form-control" id="matricula" placeholder="matricula" value="<?php echo $aluno['matricula']?>">
             </div>
         </div>
         <div class="form-group row">
             <label for="Cidade" class="col-sm-2 col-form-label">Cidade</label>
             <div class="col-sm-10">
-                <input name="Cidade" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){2,}" class="form-control" id="Cidade" placeholder="Valor" value="<?php echo $linhas['Cidade']?>">
+                <input name="cidade" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){2,}" class="form-control" id="Cidade" placeholder="Valor" value="<?php echo $aluno['cidade']?>">
             </div>
         </div>
         <div>
-            <button class="btn btn-primary" name="editar" id="editar" type="submit">Editar</button>
+            <button class="btn btn-primary" name="editar" value="editar" id="editar" type="submit">Editar</button>
         </div>
     </form>
 </body>

@@ -23,6 +23,9 @@ function novo (): void
 
 function editar (): void
 {
+    $id = $_GET['id'];
+    $aluno = buscarAluno($id);
+    editarAluno();
     include '../src/views/editar.phtml';
 }
 function excluir()
