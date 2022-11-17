@@ -1,2 +1,33 @@
-<h1>Pagina de Editar</h1>
-<hr>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de edição</title>
+</head>
+<body>
+    <form method="POST" action="#">
+        <div class="form-group row">
+            <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+            <div class="col-sm-10">
+                <input type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){3,}" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?php echo $linhas['nome']?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="matricula" class="col-sm-2 col-form-label">Matricula</label>
+            <div class="col-sm-10">
+                <input name="matricula" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){2,}" class="form-control" id="matricula" placeholder="matricula" value="<?php echo $linhas['matricula']?>">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="Cidade" class="col-sm-2 col-form-label">Cidade</label>
+            <div class="col-sm-10">
+                <input name="Cidade" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){2,}" class="form-control" id="Cidade" placeholder="Valor" value="<?php echo $linhas['Cidade']?>">
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary" name="editar" id="editar" type="submit">Editar</button>
+        </div>
+    </form>
+</body>
+</html>
