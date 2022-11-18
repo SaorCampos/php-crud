@@ -18,6 +18,20 @@ function listar (): void
 function novo (): void 
 {
     include '../src/views/novo.phtml';
+    if (false === empty($_POST)){
+        $nome = trim($_POST['nome']);
+        $matricula = trim($_POST['cidade']);
+        $cidade = trim($_POST['matricula']);
+        if(strlen($nome) < 3){
+            die('Nome invalido');
+        }
+        if(strlen($cidade) < 3){
+            die('Cidade invalida');
+        }
+        if(strlen($matricula) < 3){
+            die('Matricula invalida');
+        }
+    }
     novoAluno();
 }
 
