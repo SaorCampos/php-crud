@@ -1,8 +1,6 @@
-<h1>Pagina de listar</h1>
-
+<h1 style="text-align: center;">Pagina de listar</h1>
 <hr>
-
-<table class="container table table-striped table-hover">
+<table style="text-align: center;" class="container table table-striped table-hover">
     <thead class="table-dark">
         <tr>
             <th>ID</th>
@@ -14,7 +12,7 @@
     </thead>
     <tbody>
         <?php
-        foreach ($alunos as $linha) {
+        foreach ($dados as $linha) {
             $id = $linha['id'];
             echo 
                 "<tr>
@@ -24,11 +22,17 @@
                     <td>{$linha['cidade']}</td>
                     <td>
                         <a href='/editar?id={$id}' class='btn btn-outline-warning'>Editar</a>
-                        <a href='/excluir?id={$id}' class='btn btn-outline-danger'>Excluir</a>
+                        <a href='#' onclick='confirmar({$id})' class='btn btn-outline-danger'>Excluir</a>
                     </td>
                 </tr>";
         }
         ?>
     </tbody>
-
 </table>
+<script>
+    function confirmar(id){
+        if(true === confirm('Tem certeza?')){
+            location.href = '/excluir?id='+id;
+        }
+    }
+</script>

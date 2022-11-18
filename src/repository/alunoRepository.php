@@ -28,18 +28,13 @@ function buscarAluno(string $id): iterable
     $aluno = abrirConexao()->query($sql);
     return $aluno->fetch(PDO::FETCH_ASSOC);
 }
-function editarAluno(): void
+function editarAluno(string $nome, string $matricula, string $cidade, string $id): void
 {
     try {
         if (isset($_POST['editar']) && $_POST['editar'] == "editar") {
-            $id = $_POST['id'];
-            $nome = $_POST['nome'];
-            $matricula = $_POST['matricula'];
-            $cidade = $_POST['cidade'];
             $sql = "UPDATE tb_alunos SET nome=?, matricula=?, cidade=? WHERE id=?";
             $query = abrirConexao()->prepare($sql);
             $query->execute([$nome, $matricula, $cidade, $id]);
-            header('location: /listar');
         }
     } catch (Exception $e) {
         var_dump($e);

@@ -7,23 +7,23 @@
 </head>
 <body>
     <form method="POST" action="#">
-        <input type="hidden" name="id" value="<?php echo $aluno['id'];?>">
+        <input type="hidden" name="id" value="<?php echo $dados['id'];?>">
         <div class="form-group row">
             <label for="nome" class="col-sm-2 col-form-label">Nome</label>
             <div class="col-sm-10">
-                <input type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){3,}" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?php echo $aluno['nome'];?>">
+                <input type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){3,}" class="form-control" name="nome" id="nome" placeholder="Nome" value="<?php echo $_POST['nome'] ?? $dados['nome'];?>">
             </div>
         </div>
         <div class="form-group row">
             <label for="matricula" class="col-sm-2 col-form-label">Matricula</label>
             <div class="col-sm-10">
-                <input name="matricula" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){2,}" class="form-control" id="matricula" placeholder="matricula" value="<?php echo $aluno['matricula']?>">
+                <input name="matricula" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){1,}" class="form-control" id="matricula" placeholder="matricula" value="<?php echo $_POST['matricula'] ?? $dados['matricula'];?>">
             </div>
         </div>
         <div class="form-group row">
             <label for="Cidade" class="col-sm-2 col-form-label">Cidade</label>
             <div class="col-sm-10">
-                <input name="cidade" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){2,}" class="form-control" id="Cidade" placeholder="Valor" value="<?php echo $aluno['cidade']?>">
+                <input name="cidade" type="text" pattern="(?=.*[A-Z])(?=.*[a-z]){3,}" class="form-control" id="Cidade" placeholder="Valor" value="<?php echo $_POST['cidade'] ?? $dados['cidade'];?>">
             </div>
         </div>
         <div>
