@@ -15,7 +15,7 @@ function exlcuirAluno(string $id): void
 function novoAluno()
 {
     try {
-        if (isset($_POST['editar']) && $_POST['editar'] == "editar") {
+        if (isset($_POST['criar']) && $_POST['criar'] == "criar") {
             $nome = $_POST['nome'];
             $matricula = $_POST['matricula'];
             $cidade = $_POST['cidade'];
