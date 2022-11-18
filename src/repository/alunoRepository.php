@@ -12,17 +12,12 @@ function exlcuirAluno(string $id): void
     $sql = "DELETE FROM tb_alunos WHERE id={$id}";
     abrirConexao()->query($sql);
 }
-function novoAluno()
+function novoAluno(string $nome, string $cidade, string $matricula): void
 {
     try {
-        if (isset($_POST['criar']) && $_POST['criar'] == "criar") {
-            $nome = $_POST['nome'];
-            $matricula = $_POST['matricula'];
-            $cidade = $_POST['cidade'];
             $select = "INSERT INTO tb_alunos (nome, matricula, cidade) VALUES (?,?,?)";
             $query = abrirConexao()->prepare($select);
             $query->execute([$nome, $matricula, $cidade]);
-        }
     } catch (Exception $e) {
         var_dump($e);
     }

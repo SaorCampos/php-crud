@@ -22,17 +22,11 @@ function novo (): void
         $nome = trim($_POST['nome']);
         $matricula = trim($_POST['cidade']);
         $cidade = trim($_POST['matricula']);
-        if(strlen($nome) < 3){
-            die('Nome invalido');
-        }
-        if(strlen($cidade) < 3){
-            die('Cidade invalida');
-        }
-        if(strlen($matricula) < 3){
-            die('Matricula invalida');
+        if(true === validateForm($nome, $cidade, $matricula)){
+            novoAluno($nome, $cidade, $matricula);
+            header('location: /lisatar');
         }
     }
-    novoAluno();
 }
 
 function editar (): void
