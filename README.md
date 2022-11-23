@@ -1,5 +1,5 @@
 ### Para iniciar o servidor:
-\php -S localhost:(porta desejada) -t public;
+`php -S localhost:(porta desejada) -t public`;
 
 ## Criação do banco de dados:
 É somente copiar o conteúdo de db.sql e rodar no workbench ou shell do MySQL,
